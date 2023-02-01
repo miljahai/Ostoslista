@@ -19,6 +19,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <TextInput style={styles.input} onChangeText={text => setText(text)} value= {text}/>
+
       <View style={styles.operators}>
         <View style={styles.button}>
           <Button title='Add' onPress={buttonPressed}/>
@@ -27,7 +28,7 @@ export default function App() {
           <Button title='Clear' onPress={clear}/>
         </View>
       </View>
-      <FlatList style={styles.list} data={data} renderItem={({item}) => 
+      <FlatList ListHeaderComponent={() => <Text style={{color: 'purple', fontWeight: 'bold'}}>Ostoslista</Text>} style={styles.list} data={data} renderItem={({item}) => 
       <Text>{item.key}</Text>} keyExtractor={(item, index) => index.toString()} />
       <StatusBar style="auto" />
     </View>
