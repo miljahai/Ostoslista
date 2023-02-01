@@ -28,7 +28,9 @@ export default function App() {
           <Button title='Clear' onPress={clear}/>
         </View>
       </View>
-      <FlatList ListHeaderComponent={() => <Text style={{color: 'purple', fontWeight: 'bold'}}>Ostoslista</Text>} style={styles.list} data={data} renderItem={({item}) => 
+      <FlatList 
+      ListHeaderComponent={() => <Text style={styles.text}>Ostoslista</Text>} 
+      data={data} renderItem={({item}) => 
       <Text>{item.key}</Text>} keyExtractor={(item, index) => index.toString()} />
       <StatusBar style="auto" />
     </View>
@@ -52,8 +54,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
-  list: {
-
+  text: {
+    color: 'purple',
+    fontWeight: 'bold'
   },
   button: {
     margin: 10,
